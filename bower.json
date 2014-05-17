@@ -15,6 +15,7 @@
   ],
   "devDependencies": {
     "angular": "~1.2.16",
-    "boilerplate.pxwrk.de": "DerZyklop/boilerplate.pxwrk.de"
+    "boilerplate.pxwrk.de": "DerZyklop/boilerplate.pxwrk.de",
+    "bootstrap": "twbs/bootstrap#~3.1.1"
   }
 }
