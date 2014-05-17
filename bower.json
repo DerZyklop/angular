@@ -1,0 +1,20 @@
+{
+  "name": "angular",
+  "version": "0.0.0",
+  "authors": [
+    "Nils Neumann <mail@der-zyklop.de>"
+  ],
+  "description": "just a angular-test",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.16",
+    "boilerplate.pxwrk.de": "DerZyklop/boilerplate.pxwrk.de"
+  }
+}
