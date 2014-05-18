@@ -29,10 +29,10 @@ module.exports = (grunt) ->
     concat:
       all:
         src: [
-          'bower_components/jquery/dist/jquery.min.js'
-          'bower_components/angular/angular.min.js'
-          'bower_components/angular-animate/angular-animate.min.js'
-          '<%= paths.src.js %>*.js'
+          "bower_components/jquery/dist/jquery.min.js"
+          "bower_components/angular/angular.min.js"
+          "bower_components/angular-animate/angular-animate.min.js"
+          "<%= paths.src.js %>*.js"
         ]
         dest: '<%= paths.build.js %>script.js'
 
@@ -64,6 +64,18 @@ module.exports = (grunt) ->
           ext: '.css'
         ]
 
+    # imageEmbed
+    imageEmbed:
+      options:
+        deleteAfterEncoding : false
+      all:
+        files: [
+          expand: true
+          cwd: '<%= paths.src.css %>'
+          src: ['*.css']
+          dest: '<%= paths.src.css %>'
+        ]
+
     # cssmin
     cssmin:
       options:
@@ -88,7 +100,7 @@ module.exports = (grunt) ->
       # watch sass
       sass:
         files: ['<%= paths.src.sass %>*.sass']
-        tasks: ['newer:sass', 'newer:autoprefixer', 'newer:cssmin']
+        tasks: ['newer:sass', 'newer:autoprefixer', 'newer:imageEmbed', 'newer:cssmin']
         options:
           livereload: true
 
@@ -117,7 +129,7 @@ module.exports = (grunt) ->
         files: [
           expand: true
           cwd: '<%= paths.src.dir %>'
-          src: ['**/*','<%= paths.assets %>images/**/*']
+          src: ['**/*','!<%= paths.assets %>**','<%= paths.assets %>images/**/*']
           dest: '<%= paths.build.dir %>'
         ]
 
@@ -127,7 +139,7 @@ module.exports = (grunt) ->
         options:
           port: 1337
           hostname: 'localhost'
-          # base: '<%= paths.build.dir %>'
+          base: '<%= paths.root %>'
           keepalive: true
           open: true
 
@@ -143,10 +155,10 @@ module.exports = (grunt) ->
       server:
         options:
           title: 'Yo'
-          message: 'Server läuft auf <%= php.all.options.hostname %>:<%= php.all.options.port %>\nRoot is <%= paths.build.dir %>'
+          message: 'Server läuft auf <%= php.all.options.hostname %>:<%= php.all.options.port %>'
 
 
   # Default task(s)
   grunt.registerTask('scripts', ['coffee', 'eslint', 'concat'])
-  grunt.registerTask('styles', ['sass', 'autoprefixer', 'cssmin'])
+  grunt.registerTask('styles', ['sass', 'autoprefixer', 'imageEmbed', 'cssmin'])
   grunt.registerTask('default', ['scripts', 'styles', 'concurrent'])
