@@ -1,10 +1,22 @@
-<html ng-app>
+<html ng-app="hitchhikrApp">
 <head>
   <meta charset="utf8" />
   <title>AngularJS Tutorial</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
+
+  <input type="text" ng-model="search">
+   <p>Du suchst gerade nach: {{search}}</p>
+
+  <table class="table" ng-controller="ArticlesCtrl">
+    <tr ng-repeat="article in articles | filter:search">
+      <td>{{article.id}}</td>
+      <td>{{article.name}}</td>
+      <td>{{article.price}}</td>
+    </tr>
+  </table>
   <script src="bower_components/angular/angular.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

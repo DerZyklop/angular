@@ -1,10 +1,10 @@
 {
   "src": {
-    "dir":      "assets/",
-    "coffee":   "<%= paths.src.dir %>coffee/",
-    "js":       "<%= paths.src.dir %>js/",
-    "sass":     "<%= paths.src.dir %>sass/",
-    "css":      "<%= paths.src.dir %>css/"
+    "dir":      "src/",
+    "coffee":   "<%= paths.src.dir %>assets/coffee/",
+    "js":       "<%= paths.src.dir %>assets/js/",
+    "sass":     "<%= paths.src.dir %>assets/sass/",
+    "css":      "<%= paths.src.dir %>assets/css/"
   },
   "build": {
     "dir":      "assets/",
