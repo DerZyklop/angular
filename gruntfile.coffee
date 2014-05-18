@@ -30,6 +30,8 @@ module.exports = (grunt) ->
       all:
         src: [
           'bower_components/jquery/dist/jquery.min.js'
+          'bower_components/angular/angular.min.js'
+          'bower_components/angular-animate/angular-animate.min.js'
           '<%= paths.src.js %>*.js'
         ]
         dest: '<%= paths.build.js %>script.js'
@@ -72,7 +74,7 @@ module.exports = (grunt) ->
           cwd: '<%= paths.src.css %>'
           src: ['*.css']
           dest: '<%= paths.build.css %>'
-          ext: '.min.css'
+          ext: '.css'
         ]
 
     # watch
@@ -125,7 +127,7 @@ module.exports = (grunt) ->
         options:
           port: 1337
           hostname: 'localhost'
-          base: '<%= paths.build.dir %>'
+          # base: '<%= paths.build.dir %>'
           keepalive: true
           open: true
 

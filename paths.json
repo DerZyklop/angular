@@ -7,8 +7,8 @@
     "css":      "<%= paths.src.dir %>assets/css/"
   },
   "build": {
-    "dir":      "assets/",
-    "js":       "<%= paths.build.dir %>js/",
-    "css":      "<%= paths.build.dir %>css/"
+    "dir":      "build/",
+    "js":       "<%= paths.build.dir %>assets/js/",
+    "css":      "<%= paths.build.dir %>assets/css/"
   }
 }

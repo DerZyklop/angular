@@ -1,0 +1,10 @@
+html {
+  background: white; }
+
+.cart-item.ng-enter {
+  background: yellow;
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all; }
+
+.cart-item.ng-enter-active {
+  background: white; }

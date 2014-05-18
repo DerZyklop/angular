@@ -3,6 +3,7 @@
   <meta charset="utf8" />
   <title>AngularJS Tutorial</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="build/assets/css/styles.css">
 </head>
 <body>
 
@@ -10,13 +11,31 @@
    <p>Du suchst gerade nach: {{search}}</p>
 
   <table class="table" ng-controller="ArticlesCtrl">
-    <tr ng-repeat="article in articles | filter:search">
+    <tr ng-repeat="article in articles | filter:search" class="cart-item">
       <td>{{article.id}}</td>
       <td>{{article.name}}</td>
       <td>{{article.price}}</td>
+      <td><a ng-click="cart.addArticle(article);" class="btn btn-default btn-sm">Hinzufügen</a></td>
+   </tr>
+  </table>
+
+
+<div ng-controller="CartCtrl">
+  <div ng-hide="cart.getItems().length" class="alert alert-warning">Ihr Warenkorb ist noch leer.</div>
+  <table ng-show="cart.getItems().length" class="table">
+    <tr ng-repeat="item in cart.getItems() track by $index">
+      <td>{{item.name}}</td>
+      <td>{{item.price | currency}}</td>
+    </tr>
+    <tr>
+      <td>{{cart.getItems().length}} Artikel</td>
+      <td>{{cart.sum() | currency}}</td>
+      <td></td>
     </tr>
   </table>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="assets/js/script.js"></script>
+</div>
+
+
+  <script src="build/assets/js/script.js"></script>
 </body>
 </html>
