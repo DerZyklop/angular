@@ -1,0 +1,14 @@
+{
+  "name": "boilerplate.pxwrk.de",
+  "homepage": "https://github.com/DerZyklop/boilerplate.pxwrk.de",
+  "_release": "11bc73f56c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "11bc73f56c8a9a1e9776b07047dda6b63b4ffea0"
+  },
+  "_source": "https://github.com/DerZyklop/boilerplate.pxwrk.de.git",
+  "_target": "*",
+  "_originalSource": "DerZyklop/boilerplate.pxwrk.de",
+  "_direct": true
+}

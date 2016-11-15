@@ -1,0 +1,21 @@
+{
+  "name": "boilerplate.pxwrk.de",
+  "description": "Project by @DerZyklop",
+  "main": "",
+  "authors": [
+    "Nils Neumann <mail@der-zyklop.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/DerZyklop/angular",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "boilerplate.pxwrk.de": "DerZyklop/boilerplate.pxwrk.de",
+    "bootstrap": "^3.3.7"
+  }
+}
